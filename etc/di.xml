@@ -1,0 +1,26 @@
+<?xml version="1.0"?>
+<!--
+/**
+ * Copyright © Dxvn, Inc. All rights reserved.
+ * @author  Tran Ngoc Duc <caothu91@gmail.com>
+ */
+-->
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+    <virtualType name="Magento\GroupedProduct\Pricing\Price\Pool" type="Magento\Framework\Pricing\Price\Pool">
+        <arguments>
+            <argument name="prices" xsi:type="array">
+                <item name="final_price" xsi:type="string">
+                    Diepxuan\GroupedProductMaxPrice\Pricing\Price\FinalPrice
+                </item>
+                <item name="configured_price" xsi:type="string">
+                    Magento\GroupedProduct\Pricing\Price\ConfiguredPrice
+                </item>
+                <item name="configured_regular_price" xsi:type="string">
+                    Magento\GroupedProduct\Pricing\Price\ConfiguredRegularPrice
+                </item>
+            </argument>
+            <argument name="target" xsi:type="object">Magento\Catalog\Pricing\Price\Pool</argument>
+        </arguments>
+    </virtualType>
+</config>
